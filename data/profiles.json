@@ -1,0 +1,9 @@
+{
+  "profiles": [
+    {
+      "id": "scholar",
+      "label": "Google Scholar",
+      "url": ""
+    }
+  ]
+}

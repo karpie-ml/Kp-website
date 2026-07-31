@@ -1,0 +1,35 @@
+{
+  "projects": [
+    {
+      "slug": "md-key-chunker",
+      "category": "publication",
+      "miniTitle": "MD Key Chunker",
+      "thumbnail": "media/thumbs/md-key-chunker.jpeg",
+      "hasPage": false,
+      "addedAt": "2026-07-30T19:13:08.970Z",
+      "updatedAt": "2026-07-30T19:13:08.970Z",
+      "publication": {
+        "title": "MDKeyChunker: Single-Call LLM Enrichment with Rolling Keys and Key-Based Restructuring for High-Accuracy RAG",
+        "authors": "B.Mangla, K. Prabhu",
+        "venue": "",
+        "year": "2026",
+        "status": "published",
+        "links": {
+          "pdf": "https://arxiv.org/abs/2603.23533",
+          "arxiv": "https://arxiv.org/abs/2603.23533",
+          "code": "https://github.com/bhavik-mangla/MDKeyChunker"
+        },
+        "bibtex": "@misc{mangla2026mdkeychunkersinglecallllmenrichment,\r\n      title={MDKeyChunker: Single-Call LLM Enrichment with Rolling Keys and Key-Based Restructuring for High-Accuracy RAG}, \r\n      author={Bhavik Mangla},\r\n      year={2026},\r\n      eprint={2603.23533},\r\n      archivePrefix={arXiv},\r\n      primaryClass={cs.CL},\r\n      url={https://arxiv.org/abs/2603.23533}, \r\n}"
+      }
+    },
+    {
+      "slug": "manipal-osf",
+      "category": "oss",
+      "miniTitle": "Manipal OSF",
+      "thumbnail": "media/thumbs/manipal-osf.jpeg",
+      "hasPage": true,
+      "addedAt": "2026-07-30T19:07:12.027Z",
+      "updatedAt": "2026-07-30T19:07:12.027Z"
+    }
+  ]
+}

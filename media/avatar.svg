@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2962ff"/>
+      <stop offset="1" stop-color="#0039cb"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#g)"/>
+  <text x="200" y="228" text-anchor="middle" font-family="Montserrat, -apple-system, sans-serif"
+        font-size="150" font-weight="800" fill="#ffffff" letter-spacing="4">KP</text>
+</svg>

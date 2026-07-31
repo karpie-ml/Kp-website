@@ -1,0 +1,9 @@
+.DS_Store
+**/.DS_Store
+
+# Canonical upload sources are for local CMS export only — never deploy them.
+**/source.zip
+**/source.md
+**/source.tex
+**/source.docx
+**/source.pdf

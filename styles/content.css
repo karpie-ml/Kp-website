@@ -1,0 +1,56 @@
+/* Typography for CMS-compiled document pages (CV, project pages).
+   All colors come from the theme variables in site.css, so compiled
+   pages follow the light/dark toggle automatically. */
+
+.content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 32px 96px;
+}
+
+.content h1, .content h2, .content h3, .content h4 {
+  font-family: var(--font-head);
+}
+.content h1 { font-size: 30px; margin-top: 0; }
+.content h2 {
+  font-size: 23px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-top: 1.7em;
+}
+.content h3 { font-size: 19px; }
+
+.content img { max-width: 100%; height: auto; border-radius: 6px; }
+
+.content figure { margin: 28px 0; text-align: center; }
+.content figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
+
+.content blockquote {
+  margin: 20px 0;
+  padding: 4px 20px;
+  border-left: 3px solid var(--primary);
+  color: var(--muted);
+}
+
+.content code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+}
+.content pre code { background: none; padding: 0; color: var(--text); }
+
+.content table { border-collapse: collapse; margin: 24px 0; width: 100%; }
+.content th, .content td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+.content th { background: var(--bg-alt); font-family: var(--font-head); font-size: 14px; }
+
+.content .katex-display { overflow-x: auto; padding: 4px 0; }

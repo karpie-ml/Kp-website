@@ -1,0 +1,25 @@
+{
+  "aboutHtml": "<p>I am a masters student and graduate researcher at the Centre for Security, Theory and Algorithms Research(CSTAR) at IIIT Hyderabad. My interests lie in Graph Theory and Machine Learning.<br /><br />My CV can be found here: <a class=\"about-btn\" href=\"cv/\">View my CV</a> </p><p>I also build software projects and participate in startup related events. A summary of my projects and research can be found here:  <a class=\"about-btn\" href=\"projects/\">Explore my projects</a> <br /><br />I am also getting into writing. My writing can be found on my medium blog. <a class=\"about-btn\" href=\"blog/\">Read my blog</a> </p>",
+  "education": [
+    {
+      "institute": "Manipal Institute of Technology",
+      "program": "B.Tech - Civil Engineering",
+      "completed": "Oct 2025"
+    },
+    {
+      "institute": "International Institute of Information Technology, Hyderabad",
+      "program": "Master of Science - Computer Science",
+      "completed": "Ongoing"
+    }
+  ],
+  "socials": {
+    "twitter": "",
+    "linkedin": "https://www.linkedin.com/in/karthik-prabhu-018601153/",
+    "instagram": ""
+  },
+  "contact": {
+    "email": "karthik.bantwal@research.iiit.ac.in",
+    "phone": "+91 8520983410",
+    "address": "Vindhya A2, Centre for Security Theory and Algorithms Research (CSTAR), IIIT Hyderabad"
+  }
+}

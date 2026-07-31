@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "slug": "md-key-chunker",
+      "type": "publication",
+      "title": "MDKeyChunker: Single-Call LLM Enrichment with Rolling Keys and Key-Based Restructuring for High-Accuracy RAG",
+      "path": "projects/#pub-md-key-chunker",
+      "addedAt": "2026-07-30T19:13:08.970Z"
+    },
+    {
+      "slug": "manipal-osf",
+      "type": "oss",
+      "title": "Manipal OSF",
+      "path": "projects/manipal-osf/",
+      "addedAt": "2026-07-30T19:07:12.027Z"
+    }
+  ]
+}
