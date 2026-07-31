@@ -21,7 +21,13 @@ const SOCIAL_LABELS = { twitter: "Twitter / X", linkedin: "LinkedIn", instagram:
 // sanitized by the CMS).
 fetch("data/home.json")
   .then((r) => r.json())
-  .then(({ aboutHtml, socials, education, contact }) => {
+  .then(({ avatar, aboutHtml, socials, education, contact }) => {
+    const avatarEl = document.getElementById("avatar");
+    if (avatar) {
+      // Cache-bust so a newly uploaded photo shows after CMS save without a hard refresh.
+      avatarEl.src = avatar + (avatar.endsWith(".svg") ? "" : "?v=" + Date.now());
+    }
+
     document.getElementById("about").innerHTML = aboutHtml;
 
     const socialsBox = document.getElementById("socials");
@@ -42,18 +48,98 @@ fetch("data/home.json")
     for (const e of entries) {
       const li = document.createElement("li");
       li.className = "edu-item";
-      li.innerHTML = `
+
+      const status = e.status === "ongoing" || String(e.completed ?? "").toLowerCase() === "ongoing"
+        ? "ongoing"
+        : "completed";
+
+      const head = document.createElement("div");
+      head.className = "edu-head";
+      head.innerHTML = `
         <span class="edu-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
         </span>
         <span class="edu-body">
-          <span class="edu-program"></span>
+          <span class="edu-program-line">
+            <span class="edu-program"></span>
+            <span class="edu-cgpa" hidden></span>
+          </span>
           <span class="edu-institute"></span>
         </span>
-        <span class="edu-date"></span>`;
-      li.querySelector(".edu-program").textContent = e.program;
-      li.querySelector(".edu-institute").textContent = e.institute;
-      li.querySelector(".edu-date").textContent = e.completed;
+        <span class="edu-meta"></span>`;
+      head.querySelector(".edu-program").textContent = e.program;
+      head.querySelector(".edu-institute").textContent = e.institute;
+      if (e.cgpa) {
+        const cgpaEl = head.querySelector(".edu-cgpa");
+        cgpaEl.hidden = false;
+        cgpaEl.textContent = "CGPA " + e.cgpa;
+      }
+
+      const metaEl = head.querySelector(".edu-meta");
+      if (e.completed && String(e.completed).toLowerCase() !== "ongoing") {
+        const date = document.createElement("span");
+        date.className = "edu-date";
+        date.textContent = e.completed;
+        metaEl.appendChild(date);
+      }
+      if (status === "ongoing") {
+        const badge = document.createElement("span");
+        badge.className = "edu-badge ongoing";
+        badge.textContent = "Ongoing";
+        metaEl.appendChild(badge);
+      }
+
+      li.appendChild(head);
+
+      const semesters = e.semesters ?? [];
+      if (semesters.length) {
+        const wrap = document.createElement("div");
+        wrap.className = "edu-semesters";
+        for (const s of semesters) {
+          const sec = document.createElement("section");
+          sec.className = "edu-semester";
+          const h = document.createElement("h3");
+          h.className = "edu-semester-label";
+          const title = document.createElement("span");
+          title.textContent = s.label;
+          h.appendChild(title);
+          if (s.status === "completed") {
+            const tag = document.createElement("span");
+            tag.className = "edu-sem-tag";
+            tag.textContent = "Completed";
+            h.appendChild(tag);
+          } else if (s.status === "in-progress") {
+            const tag = document.createElement("span");
+            tag.className = "edu-sem-tag in-progress";
+            tag.textContent = "In progress";
+            h.appendChild(tag);
+          }
+          const ul = document.createElement("ul");
+          ul.className = "edu-courses";
+          for (const c of s.courses ?? []) {
+            const ci = document.createElement("li");
+            ci.className = "edu-course";
+            const code = document.createElement("span");
+            code.className = "edu-course-code";
+            code.textContent = c.code;
+            const name = document.createElement("span");
+            name.className = "edu-course-name";
+            name.textContent = c.name;
+            ci.append(code, name);
+            if (s.status === "completed" && c.grade) {
+              const grade = document.createElement("span");
+              grade.className = "edu-course-grade";
+              grade.textContent = c.grade;
+              ci.appendChild(grade);
+            }
+            ul.appendChild(ci);
+          }
+          sec.append(h, ul);
+          wrap.appendChild(sec);
+        }
+        li.appendChild(wrap);
+      }
+
       eduList.appendChild(li);
     }
 

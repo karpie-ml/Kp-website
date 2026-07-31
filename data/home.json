@@ -1,15 +1,39 @@
 {
+  "avatar": "media/avatar.jpg",
   "aboutHtml": "<p>I am a masters student and graduate researcher at the Centre for Security, Theory and Algorithms Research(CSTAR) at IIIT Hyderabad. My interests lie in Graph Theory and Machine Learning.<br /><br />My CV can be found here: <a class=\"about-btn\" href=\"cv/\">View my CV</a> </p><p>I also build software projects and participate in startup related events. A summary of my projects and research can be found here:  <a class=\"about-btn\" href=\"projects/\">Explore my projects</a> <br /><br />I am also getting into writing. My writing can be found on my medium blog. <a class=\"about-btn\" href=\"blog/\">Read my blog</a> </p>",
   "education": [
     {
       "institute": "Manipal Institute of Technology",
       "program": "B.Tech - Civil Engineering",
-      "completed": "Oct 2025"
+      "completed": "Oct 2025",
+      "status": "completed",
+      "cgpa": "",
+      "semesters": []
     },
     {
       "institute": "International Institute of Information Technology, Hyderabad",
       "program": "Master of Science - Computer Science",
-      "completed": "Ongoing"
+      "completed": "Aug 2025 – present",
+      "status": "ongoing",
+      "cgpa": "",
+      "semesters": [
+        {
+          "label": "Monsoon 2026",
+          "status": "in-progress",
+          "courses": [
+            {
+              "code": "CS3.401",
+              "name": "Distributed Systems",
+              "grade": ""
+            },
+            {
+              "code": "CS7.403",
+              "name": "Statistical Methods in AI",
+              "grade": ""
+            }
+          ]
+        }
+      ]
     }
   ],
   "socials": {

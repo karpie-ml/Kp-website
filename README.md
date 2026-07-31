@@ -11,7 +11,8 @@ Everything here is plain HTML, CSS, JS, JSON, and media. There is no server runt
 | `index.html` | Home — hero, about, education, socials, highlights, contact |
 | `cv/` | CV page (compiled document or embedded PDF) |
 | `projects/` | Projects listing + per-project pages under `projects/<slug>/` |
-| `blog/` | Blog placeholder (Medium integration later) |
+| `blog/` | Medium cards → FullArticle (`blog/article/?id=…`) |
+| `data/blog.json` | `{ "mediumUsername": "…" }` — set via CMS Settings |
 | `data/` | Content the CMS writes: `home.json`, `projects.json`, `content-index.json` (highlights), `profiles.json` |
 | `js/` | Client scripts that hydrate pages from those JSON files |
 | `styles/` | Site chrome + compiled-document typography (light/dark theme) |
