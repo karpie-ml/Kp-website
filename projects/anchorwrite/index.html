@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnchorWrite — Karthik Prabhu</title>
+<script>(function(){var t=localStorage.getItem("kp-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/site.css">
+<link rel="stylesheet" href="../../styles/content.css">
+</head>
+<body>
+
+<nav class="ribbon">
+  <a class="brand" href="../../">KP</a>
+  <ul>
+    <li><a href="../../">Home</a></li>
+    <li><a href="../../cv/">CV</a></li>
+    <li><a href="../../projects/" class="active">Projects</a></li>
+    <li><a href="../../blog/">Blog</a></li>
+  </ul>
+  <div class="ribbon-tools">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+  <div class="ribbon-foot">&copy; Karthik Prabhu</div>
+</nav>
+
+<div class="page">
+<main class="content">
+<figure class="project-header">
+<img src="../../media/thumbs/anchorwrite.png" alt="AnchorWrite — Karthik Prabhu">
+</figure>
+<article>
+<p>AnchorWrite is a lightweight, client-side application to index
+handwritten notes.</p>
+<p><span class="text-lg"><strong>Problem</strong></span></p>
+<p>As a researcher who uses symbolic mathematics a lot, I make a lot of
+handwritten notes, whether for courses or for my own research. One
+problem which I routinely faced while making handwritten notes is
+finding the right page where a particular concept I am thinking about is
+present.</p>
+<p>Usual software attempts to transcribe the entire handwritten text
+using OCR or VLM technology to make the text searchable. For example:
+Apple’s pdf reader sometimes can perform copy paste on scanned documents
+(Due to this internal OCR conversion). This comes with several
+problems:</p>
+<ol>
+<li><div>
+<p>It rarely works: OCR technology is not mature for handwritten notes.
+Handwriting varies per person and personally for my handwriting, it
+barely works.</p>
+</div></li>
+<li><div>
+<p>It is expensive if it works: To make it work reliably, one must use
+VLMs, which are trained on a larger corpus of handwritten texts. This is
+not scalable as a free, OSS product due to costs.</p>
+</div></li>
+<li><div>
+<p>It requires server-side computing: For those who have privacy
+concerns, handing over their documents which is uploaded to a server
+outside their control is a red-line, regardless of the TOS of the site.
+This gets even more complicated if the server upload is cross-border,
+where legal restrictions can come into play.</p>
+</div></li>
+</ol>
+<p><span class="text-lg"><strong>Solution</strong></span></p>
+<p>The solution proposed by AnchorWrite is a simple client-side
+application which facilitates the smooth indexing of these handwritten
+documents. Instead of relying on fancy OCR or VLM technologies, you
+index the documents by hand right after completing the notes. This
+leverages certain human cognitive learning traits:</p>
+<ol>
+<li><div>
+<p>After completing notes, the mind is fresh: You know what the right
+keywords to index are.</p>
+</div></li>
+<li><div>
+<p>It acts as a quick review of the material which improves
+retention</p>
+</div></li>
+<li><div>
+<p>It is relatively speedy to do (Due to our simple interface)</p>
+</div></li>
+</ol>
+<p>A simple investment of 5-10 minutes in indexing notes, pays off
+immensely down the line.</p>
+<p><span class="text-lg"><strong>Philosophy of the
+solution</strong></span></p>
+<p>This is intended to be a free forever OSS product. It is entirely
+client-side, runs on your browser, has no sign up or cookies. In effect
+it is your own application.</p>
+<p>There are two ways to index notes. You can either opt for page level
+tags where you assign keywords to a page) or region tags (Box tags)
+where you assign keywords to a region in a page. To prevent any kind of
+lock-in to the product, we allow for export back into the pdf format,
+and resuming progress by importing the document again.</p>
+<p>Finally, after exporting the pdf, a glossary is generated on the
+front page, containing all the keywords which were embedded in pages and
+in the regions you selected. When you click the link in the glossary, it
+will navigate to the page/region where you saved the tag. This solves a
+major problem where someone may not have the concept keyword on the tip
+of their tongue, but a review of the glossary rejigs their memory.</p>
+<p>Also, if you use Ctrl-F (Search) on this pdf, you will be able to
+find the keywords in the various locations you added them.</p>
+<p><span class="text-lg"><strong>Technical
+Implementation</strong></span></p>
+<p><span class="text-lg"><strong>Page Level
+Indexing:</strong></span> In the below image, we demonstrate page level
+tagging. One can type multiple tags and save it on a particular
+page.</p>
+<p><img src="assets/media/image1.png" alt="A page of a notebook Description automatically generated" class="img-lg" /></p>
+<p><span class="text-lg"><strong>Region Level
+indexing:</strong></span></p>
+<p><img src="assets/media/image2.png" alt="A screenshot of a computer screen Description automatically generated" class="img-lg" /></p>
+<p>In the above image, we show how one can select a region in the pdf
+using the box tag feature and assign tags to that region.</p>
+<p><span class="text-lg"><strong>Glossary:</strong></span></p>
+<p>After exporting the pdf, a glossary is created of all keywords which
+were used.</p>
+<p><img src="assets/media/image3.png" alt="A screenshot of a web page Description automatically generated" class="img-lg" /></p>
+<p><span class="text-lg"><strong>Search
+(Ctrl-F):</strong></span></p>
+<p>You can search your keywords in your pdf reader itself by using the
+search shortcut. The keywords are embedded in a hidden layer in the pdf,
+either at the top right (for page tags) or slightly above the region you
+tagged.</p>
+<p><img src="assets/media/image4.png" alt="A screenshot of a computer screen Description automatically generated" class="img-lg" /></p>
+<p>I hope this product is useful for any students, researchers or anyone
+who deals with hand-written documents on a regular basis.</p>
+<p>The product can be accessed at this link: <a href="https://anchorwrite.org"><span>https://anchorwrite.org</span></a></p>
+<p>The repository can be accessed here: <a href="https://github.com/karth123/semantic-indexer"><span>Github</span></a></p>
+
+</article>
+</main>
+</div>
+
+<script src="../../js/theme.js"></script>
+<script src="../../js/links.js"></script>
+</body>
+</html>

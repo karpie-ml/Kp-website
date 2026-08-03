@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UpEase — Karthik Prabhu</title>
+<script>(function(){var t=localStorage.getItem("kp-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles/site.css">
+<link rel="stylesheet" href="../../styles/content.css">
+</head>
+<body>
+
+<nav class="ribbon">
+  <a class="brand" href="../../">KP</a>
+  <ul>
+    <li><a href="../../">Home</a></li>
+    <li><a href="../../cv/">CV</a></li>
+    <li><a href="../../projects/" class="active">Projects</a></li>
+    <li><a href="../../blog/">Blog</a></li>
+  </ul>
+  <div class="ribbon-tools">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+  <div class="ribbon-foot">&copy; Karthik Prabhu</div>
+</nav>
+
+<div class="page">
+<main class="content">
+<figure class="project-header">
+<img src="../../media/thumbs/upease.png" alt="UpEase — Karthik Prabhu">
+</figure>
+<article>
+<p>UpEase is more than just a project. It was pretty much my entire life
+from early 2023 to late 2024. It was my first serious introduction to
+computer science, AI Technology, software engineering, leadership, and
+the usual startup-y stuff like presenting, fundraising etc. it turned
+out to be the catalyst through which I took Computer Science seriously
+and formed the basis of my shift to computer science.</p>
+<p><span class="text-xl"><strong>UpEase – AI Copilot for
+Higher Education</strong></span></p>
+<p><span class="text-lg"><strong>Overview</strong></span></p>
+<p>UpEase is an AI-powered educational management platform built to
+modernize university operations through intelligent automation,
+Microsoft 365 integration, and generative AI.</p>
+<p>Traditional university management systems are fragmented. Learning
+Management Systems (LMS), Student Information Systems (SIS), attendance
+platforms, communication tools, and analytics dashboards often exist as
+disconnected products, forcing administrators and faculty to manually
+synchronize information across multiple systems.</p>
+<p>UpEase was designed as a Microsoft-native platform that unifies these
+workflows while introducing an AI Copilot capable of helping educators
+understand institutional data, identify at-risk students, and automate
+routine administrative tasks. The platform combines a multi-tenant SaaS
+architecture with Microsoft's cloud ecosystem to provide a scalable
+solution for higher education.</p>
+<p><span class="text-lg"><strong>Motivation</strong></span></p>
+<p>Before building UpEase, I worked on Manipal OSF; another one of my
+crowning projects which still leaves a strong legacy at MIT Manipal
+today. I have written about my story with Manipal OSF as well, which I
+will link at the end of this post.</p>
+<p>Briefly, Manipal OSF was an open-source initiative started to improve
+the academic ecosystem at Manipal Institute of Technology. As we grew
+this organization to thousands of student users, we realized the clear
+gaps in educational technology tools used by universities which operate
+at the scale of MIT.</p>
+<p>At the same time, Microsoft was rapidly investing in the concept of
+AI Copilots. While Copilot experiences were emerging across productivity
+software, there was no comparable platform focused on higher education
+that combined learning management, student lifecycle management, and
+AI-driven institutional insights within the Microsoft ecosystem.</p>
+<p>UpEase was created to bridge that gap by reimagining higher education
+software as an AI-first platform rather than a collection of
+disconnected administrative tools. This vision eventually evolved into a
+startup, validated through Microsoft's Imagine Cup and later
+demonstrated at Microsoft Build.</p>
+<p><span class="text-lg"><strong>The
+Problem</strong></span></p>
+<p>Most universities rely on several disconnected systems.</p>
+<ol>
+<li><div>
+<p>Learning Management Systems</p>
+</div></li>
+<li><div>
+<p>Student Information Systems</p>
+</div></li>
+<li><div>
+<p>Attendance software</p>
+</div></li>
+<li><div>
+<p>Communication platforms</p>
+</div></li>
+<li><div>
+<p>Analytics dashboards</p>
+</div></li>
+<li><div>
+<p>Spreadsheet-based reporting</p>
+</div></li>
+</ol>
+<p>This fragmentation creates duplicated work, inconsistent data,
+delayed interventions for struggling students, and very little
+institutional intelligence.</p>
+<p><span class="text-lg"><strong>Solution</strong></span></p>
+<p>Instead of building integrations across different third-party
+platforms, UpEase introduced a unified, AI-enabled education management
+platform built as a layer over Microsoft 365.</p>
+<p>The AI-enablement was accomplished through a Copilot, which was
+synced to the various aspects of a student’s academic profile using the
+Microsoft Graph API and could surface this information through targeted
+queries to a chatbot.</p>
+<p>This product was being developed in late 2023, when the concept of
+generative AI was not mature, and simple chatbots were raising millions
+of dollars. The concept of an agent did not exist at this time. What we
+built in effect was an agent, as it could perform tool-calls over the
+Microsoft Graph API. I built painstakingly by wrapping the individual
+API endpoints into custom functions which could be invoked by the LLM,
+and a decision tree over these endpoints to help the LLM plan the
+sequence of actions to perform.</p>
+<p>In fact, FAST Company, a leading tech blog, featured me in their <a href="https://fastcompanyme.com/technology/how-ai-apps-are-moving-beyond-basic-chatbots/"><span>article.</span></a></p>
+<p><img src="assets/media/image1.png" class="img-lg" /></p>
+<p>We built two stand-alone applications, the academic console for
+professors, and a student console. We also developed several
+integrations across the spectrum of Microsoft apps, like SharePoint,
+Teams, Word, Excel etc.</p>
+<p><img src="assets/media/image2.png" alt="A diagram of a company Description automatically generated" class="img-lg" /></p>
+<p><span class="text-lg"><strong>Achievements</strong></span></p>
+<p>UpEase was a critically acclaimed startup project. Our notable
+achievement was winning the <a href="https://en.wikipedia.org/wiki/Imagine_Cup"><span>Microsoft Imagine Cup</span></a> amongst
+all Indian teams. We also made it to the top 5 worldwide.</p>
+<p>We received an invitation to attend Microsoft build, with travel,
+accommodation, food and registration expenses completely borne by
+Microsoft. This was an incredible experience, and I will probably write
+more about my it on my medium blog.</p>
+<p>Prior to Microsoft Imagine Cup, we also won 3<sup>rd</sup> place at
+the MES pitch tank, a national level startup competition.</p>
+<p>I also presented this startup project as my BTech thesis.</p>
+<p>You can also watch me talk about UpEase at Microsoft build <a href="https://www.youtube.com/watch?v=5J9u4VL1bGM"><span><strong>here.</strong></span></a></p>
+<p><img src="assets/media/image3.png" class="img-lg" /></p>
+
+</article>
+</main>
+</div>
+
+<script src="../../js/theme.js"></script>
+<script src="../../js/links.js"></script>
+</body>
+</html>

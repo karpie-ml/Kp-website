@@ -62,9 +62,14 @@ function renderCarousel(container, items) {
     let offset = 0; // index of first visible card
     const maxOffset = items.length - VISIBLE;
     const update = () => {
-      const card = track.firstElementChild;
-      const step = card.offsetWidth + parseFloat(getComputedStyle(track).gap);
-      track.style.transform = `translateX(${-offset * step}px)`;
+      // Variable-width listing thumbs (height-capped) — step by real widths.
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      let x = 0;
+      for (let i = 0; i < offset; i++) {
+        const card = track.children[i];
+        if (card) x += card.offsetWidth + gap;
+      }
+      track.style.transform = `translateX(${-x}px)`;
       prev.disabled = offset === 0;
       next.disabled = offset >= maxOffset;
     };

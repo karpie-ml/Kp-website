@@ -20,7 +20,55 @@
 }
 .content h3 { font-size: 19px; }
 
+/* Word font sizes → site type scale (docxFonts + wordSizes) */
+.content .text-xs { font-size: 13px; line-height: 1.5; color: var(--muted); }
+.content .text-sm { font-size: 14px; line-height: 1.55; color: var(--muted); }
+.content .text-md { font-size: 16px; line-height: 1.6; }
+.content .text-lg {
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 700;
+  font-family: var(--font-head);
+  color: var(--heading);
+}
+.content .text-xl {
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
+  font-family: var(--font-head);
+  color: var(--heading);
+}
+.content .text-2xl {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+  font-family: var(--font-head);
+  color: var(--heading);
+}
+.content .text-body { font-size: 17.5px; line-height: 1.75; }
+.content .text-caption { font-size: 13px; line-height: 1.5; color: var(--muted); }
+.content .text-quote {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--muted);
+  border-left: 3px solid var(--primary);
+  padding-left: 16px;
+  margin: 16px 0;
+}
+/* When a whole paragraph is just a sized heading span, tighten spacing */
+.content p:has(> .text-lg:only-child),
+.content p:has(> strong > .text-lg:only-child),
+.content p:has(> .text-xl:only-child),
+.content p:has(> strong > .text-xl:only-child) {
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+
 .content img { max-width: 100%; height: auto; border-radius: 6px; }
+.content img.img-sm { width: 200px; max-width: 100%; }
+.content img.img-md { width: 400px; max-width: 100%; }
+.content img.img-lg { width: 560px; max-width: 100%; }
+.content img.img-full { width: 100%; }
 
 .content figure { margin: 28px 0; text-align: center; }
 .content figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
@@ -54,3 +102,22 @@
 .content th { background: var(--bg-alt); font-family: var(--font-head); font-size: 14px; }
 
 .content .katex-display { overflow-x: auto; padding: 4px 0; }
+
+/* Project page header thumb only: centered, compact, no frame. */
+.content .project-header {
+  margin: 0 0 28px;
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+.content .project-header img {
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-block;
+  vertical-align: middle;
+}

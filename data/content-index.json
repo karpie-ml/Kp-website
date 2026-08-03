@@ -1,6 +1,20 @@
 {
   "entries": [
     {
+      "slug": "anchorwrite",
+      "type": "oss",
+      "title": "AnchorWrite",
+      "path": "projects/anchorwrite/",
+      "addedAt": "2026-08-02T05:39:24.122Z"
+    },
+    {
+      "slug": "upease",
+      "type": "startup",
+      "title": "UpEase",
+      "path": "projects/upease/",
+      "addedAt": "2026-08-01T13:52:49.636Z"
+    },
+    {
       "slug": "md-key-chunker",
       "type": "publication",
       "title": "MDKeyChunker: Single-Call LLM Enrichment with Rolling Keys and Key-Based Restructuring for High-Accuracy RAG",

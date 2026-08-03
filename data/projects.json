@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "slug": "anchorwrite",
+      "category": "oss",
+      "miniTitle": "AnchorWrite",
+      "thumbnail": "media/thumbs/anchorwrite.png",
+      "hasPage": true,
+      "addedAt": "2026-08-02T05:39:24.122Z",
+      "updatedAt": "2026-08-02T08:56:23.655Z"
+    },
+    {
+      "slug": "upease",
+      "category": "startup",
+      "miniTitle": "UpEase",
+      "thumbnail": "media/thumbs/upease.png",
+      "hasPage": true,
+      "addedAt": "2026-08-01T13:52:49.636Z",
+      "updatedAt": "2026-08-02T08:56:14.401Z"
+    },
+    {
       "slug": "md-key-chunker",
       "category": "publication",
       "miniTitle": "MD Key Chunker",
@@ -29,7 +47,7 @@
       "thumbnail": "media/thumbs/manipal-osf.jpeg",
       "hasPage": true,
       "addedAt": "2026-07-30T19:07:12.027Z",
-      "updatedAt": "2026-07-30T19:07:12.027Z"
+      "updatedAt": "2026-08-01T14:05:18.105Z"
     }
   ]
 }
