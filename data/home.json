@@ -14,11 +14,6 @@
           "status": "in-progress",
           "courses": [
             {
-              "code": "CS3.401",
-              "name": "Distributed Systems",
-              "grade": ""
-            },
-            {
               "code": "CS7.403",
               "name": "Statistical Methods in AI",
               "grade": ""
